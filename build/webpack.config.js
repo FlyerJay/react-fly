@@ -59,10 +59,12 @@ var config = {
       'react', 'react-dom', 'react-router',
       'redux', 'react-redux', 'redux-thunk'
     ],
+    antd:[
+      
+    ]
   },
   output: {
     path: DIST_PATH,
-    // chunkhash 不能与 --hot 同时使用
     filename: __DEV__ ? 'js/[name].js' : 'js/[name].[chunkhash].js',
     chunkFilename: __DEV__ ? 'js/[name].js' : 'js/[name].[chunkhash].js'
   },
