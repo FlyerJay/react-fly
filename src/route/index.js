@@ -12,7 +12,6 @@ class Roots extends Component{
             changeMode: "push",
         }
         window.addEventListener('popstate',function(event){
-            console.log(self.context);
         })
     }
     render () {

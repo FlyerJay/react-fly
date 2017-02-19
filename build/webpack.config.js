@@ -35,12 +35,12 @@ alias = Object.assign(alias, pickFiles({
 
 alias = Object.assign(alias, pickFiles({
   id: /(reducers\/[^\/]+).js/,
-  pattern: SRC_PATH + '/js/reducers/*'
+  pattern: SRC_PATH + '/js/reducer/*'
 }));
 
 alias = Object.assign(alias, pickFiles({
   id: /(actions\/[^\/]+).js/,
-  pattern: SRC_PATH + '/js/actions/*'
+  pattern: SRC_PATH + '/js/action/*'
 }));
 
 alias = Object.assign(alias, {
