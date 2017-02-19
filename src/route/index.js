@@ -1,14 +1,24 @@
 import React, { Component } from 'react';
-import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import { Router, Route, IndexRoute, hashHistory, browserHistory } from 'react-router';
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 import Index from '../pages/Index';
 import Store from '../pages/Store';
 
 class Roots extends Component{
+    constructor (props) {
+        super(props);
+        var self = this;
+        this.state = {
+            changeMode: "push",
+        }
+        window.addEventListener('popstate',function(event){
+            console.log(self.context);
+        })
+    }
     render () {
         return (
             <ReactCSSTransitionGroup
-                transitionName = "transition"
+                transitionName = {this.state.changeMode}
                 component = "div"
                 className = "transition"
                 transitionEnterTimeout = { 300 }
@@ -23,6 +33,9 @@ class Roots extends Component{
             </ReactCSSTransitionGroup>
         )
     }
+}
+Roots.contextTypes = {
+    router:React.PropTypes.object.isRequired
 }
 
 const RouteConfig = (

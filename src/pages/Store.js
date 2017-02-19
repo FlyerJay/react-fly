@@ -5,7 +5,7 @@ export default class Index extends React.Component{
     render () {
         return (
             <NavBar
-                title="添加保养套餐"
+                title="下一页"
             >
             </NavBar>
         )

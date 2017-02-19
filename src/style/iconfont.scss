@@ -33,24 +33,24 @@ body,html,#app,.router-container,.transition,.page{
   position: absolute;
 }
 
-.transition-enter {
+.push-enter {
     transform: translate3d(100%,0,0);
     transition: transform 300ms ease-in;
     z-index: 10001;
 }
  
-.transition-enter.transition-enter-active {
+.push-enter.push-enter-active {
     transform: translate3d(0%,0,0);
     z-index: 10001;
 }
  
-.transition-leave {
+.push-leave {
     transform: translate3d(0%,0,0);
     transition: transform 300ms ease-in;
     z-index: 10000;
 }
  
-.transition-leave.transition-leave-active {
+.push-leave.push-leave-active {
     transform: translate3d(0%,0,0);
     z-index: 10000;
 }

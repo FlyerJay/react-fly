@@ -15,7 +15,7 @@ export default class Index extends React.Component{
         return (
             <div className = "page index-page">
                 <NavBar
-                    title="添加保养预约"
+                    title="首页"
                     onRightTouch={this.goToStore}
                 >
                 </NavBar>
