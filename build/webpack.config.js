@@ -54,13 +54,13 @@ alias = Object.assign(alias, {
 var config = {
   context: SRC_PATH,
   entry: {
-    app: [SRC_PATH + '/app.js'],
+    app: [SRC_PATH + '/App.js'],
     lib: [
       'react', 'react-dom', 'react-router',
       'redux', 'react-redux', 'redux-thunk'
     ],
     antd:[
-      
+      'antd-mobile',
     ]
   },
   output: {
@@ -99,8 +99,16 @@ config.module.loaders.push({
   test: /\.js$/,
   exclude: /node_modules/,
   // 这里使用 loaders ，因为后面还需要添加 loader
-  loaders: ['babel?cacheDirectory=' + CACHE_PATH]
+  loaders: ['babel']
 });
+
+config.module.loaders.push({
+  test: /\.jsx$/,
+  exclude: /node_modules/,
+  // 这里使用 loaders ，因为后面还需要添加 loader
+  loaders: ['babel']
+});
+//'?cacheDirectory=' + CACHE_PATH 如果使用编译缓存可以在loaders后面添加这个
 
 // 编译 sass
 if (__DEV__) {
@@ -117,6 +125,12 @@ if (__DEV__) {
     new ExtractTextPlugin('css/[name].[contenthash].css')
   );
 }
+
+//加载字体文件
+config.module.loaders.push({
+    test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+    loader: 'url'
+})
 
 // css autoprefix
 var precss = require('precss');

@@ -1,0 +1,75 @@
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot'); /* IE9*/
+  src: url('iconfont.eot') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:0.6rem;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*{
+  font-family: "微软雅黑";
+}
+
+body,html,#app,.router-container,.transition,.page{
+  height:100%;
+  width:100%;
+}
+
+.transition{
+  position: relative;
+}
+
+.router-container{
+  background-color:#efefef;
+  position: absolute;
+}
+
+.transition-enter {
+    transform: translate3d(100%,0,0);
+    transition: transform 300ms ease-in;
+    z-index: 10001;
+}
+ 
+.transition-enter.transition-enter-active {
+    transform: translate3d(0%,0,0);
+    z-index: 10001;
+}
+ 
+.transition-leave {
+    transform: translate3d(0%,0,0);
+    transition: transform 300ms ease-in;
+    z-index: 10000;
+}
+ 
+.transition-leave.transition-leave-active {
+    transform: translate3d(0%,0,0);
+    z-index: 10000;
+}
+
+.icon-back:before { content: "\e6a9"; }
+
+.icon-store:before { content: "\e600"; }
+
+.icon-time:before { content: "\e630"; }
+
+.icon-select:before { content: "\e60e"; }
+
+.icon-comment:before { content: "\e613"; }
+
+.icon-mile:before { content: "\e60f"; }
+
+.icon-contact:before { content: "\e623"; }
+
+.icon-phone:before { content: "\e601"; }
+
+.icon-plate:before { content: "\e61b"; }
+

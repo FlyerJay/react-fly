@@ -1,19 +1,19 @@
 import './screen.js';
-import { DatePicker, List, Button } from 'antd-mobile';
+import './style/iconfont.scss';
+import 'flex.css'
 import React from 'react';
-import ReactDOM from 'react-dom'
+import { render } from 'react-dom';
+import { Provider } from 'react-redux'
+import { Router, Route, Link, hashHistory} from 'react-router';
 
-ReactDOM.render(
+import store from './store'
+import route from './route'
+
+render(
     (
-        <div>
-            <DatePicker
-            mode="date"
-            title="选择日期"
-            extra="可选,小于结束日期"
-            >
-            <List.Item arrow="horizontal">日期</List.Item>
-            </DatePicker>
-        </div>
+        <Provider store={store}>
+            {route}
+        </Provider>
     ),
     document.getElementById('app')
 )
