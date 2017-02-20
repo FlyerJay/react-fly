@@ -4,6 +4,7 @@ import Input from '../components/Input';
 import Button from '../components/Button';
 import { connect } from 'react-redux';
 import { pushPage } from '../action';
+import { Toast } from 'antd-mobile'
 import './Index.scss'
 
 class Index extends React.Component{
@@ -13,7 +14,7 @@ class Index extends React.Component{
         const { dispatch, pageStack } = props;
         this.goToStore = () => {
             dispatch(pushPage('store'));
-            this.context.router.push({
+            self.context.router.push({
                 pathname:'/store',
             })
         }

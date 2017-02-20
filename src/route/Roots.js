@@ -10,7 +10,7 @@ class Roots extends Component{
     render () {
         return (
             <ReactCSSTransitionGroup
-                transitionName = {this.props.mode}
+                transitionName = {this.props.mode}//页面切换动画绑定到store.mode
                 component = "div"
                 className = "transition"
                 transitionEnterTimeout = { 300 }
