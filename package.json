@@ -9,7 +9,7 @@
     "remote": "npm run dev:test",
     "dev:local": "cross-env NODE_ENV=development node build/webpack.dev.js --hot",
     "dev:test": "cross-env NODE_ENV=development node build/webpack.dev.js --hot --deploy",
-    "release": "npm run deploy:online",
+    "build": "npm run deploy:online",
     "deploy:test": "cross-env NODE_ENV=production node build/webpack.release.js --watch --uglify --deploy=test",
     "deploy:online": "cross-env NODE_ENV=production node build/webpack.release.js --uglify --deploy=online"
   },

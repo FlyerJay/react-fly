@@ -1,12 +1,12 @@
 import React from 'react';
 import NavBar from '../components/NavBar';
 
-export default class Index extends React.Component{
+export default class MaintainSet extends React.Component{
     render () {
         return (
-            <div className="page store-page">
+            <div className="page maintain-set-page">
                 <NavBar
-                    title="搜索4S店"
+                    title="保养套餐"
                 >
                 </NavBar>
             </div>

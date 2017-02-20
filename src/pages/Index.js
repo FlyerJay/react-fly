@@ -17,13 +17,20 @@ class Index extends React.Component{
                 pathname:'/store',
             })
         }
+        this.goMaintainSet = () => {
+            dispatch(pushPage('maintainset'));
+            this.context.router.push({
+                pathname:'/maintainset',
+            })
+        }
     };
     render () {
         return (
             <div className = "page index-page">
                 <NavBar
                     title="添加保养预约"
-                    onRightTouch={this.goToStore}
+                    onRightTouch={this.goMaintainSet}
+                    rightContent="保养套餐"
                 >
                 </NavBar>
                 <div className = "input-control">
@@ -90,6 +97,7 @@ class Index extends React.Component{
                 <div className = "button-control">
                     <Button 
                         text = "确定预约"
+                        click = {this.goToStore}
                     ></Button>
                 </div>
             </div>

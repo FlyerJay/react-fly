@@ -2,6 +2,7 @@ import { Router, Route, IndexRoute, hashHistory, browserHistory } from 'react-ro
 import React from 'react';
 import Index from '../pages/Index';
 import Store from '../pages/Store';
+import MaintainSet from '../pages/MaintainSet';
 import Roots from './Roots';
 
 const RouteConfig = (
@@ -10,6 +11,7 @@ const RouteConfig = (
             <IndexRoute component={Index}></IndexRoute>
             <Route path="index" component={Index}></Route>
             <Route path="store" component={Store}></Route>
+            <Route path="maintainset" component={MaintainSet}></Route>
         </Route>
     </Router>
 )
