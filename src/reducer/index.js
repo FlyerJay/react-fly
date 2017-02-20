@@ -1,22 +1,37 @@
 import { combineReducers } from 'redux';
-import { pushPage, popPage } from '../action'
+import { pushPage, popPage, popTo } from '../action'
 
-const pageStackDatas = []
+const pageStackDatas = {
+    pageStack:['/',],
+    mode:'push',
+}
+
 function pageStack( state = pageStackDatas, action ){
     switch ( action.type ){
         case 'PUSH' :
-            return state.concat( action.path );
+            action.callback && action.callback(state);
+            return {
+                pageStack: state.pageStack.concat( action.path ),
+                mode: 'push'
+            };
             break;
         case 'POP' :
-            if( action.path ){
-                var index = state.indexOf( path );
-                if( index > 0 ){
-                    return state.splice( 0, index );
-                }else{
-                    return state;
-                }
+            action.callback && action.callback(state);
+            return {
+                pageStack: state.pageStack.splice(0, state.length--),
+                mode: 'pop'
+            };
+            break;
+        case 'POP_TO' :
+            action.callback && action.callback(state);
+            var index = state.pageStack.indexOf( path );
+            if( index > 0 ){
+                return {
+                pageStack: state.pageStack.splice(0, index),
+                mode: 'pop'
+                };
             }else{
-                return state.splice( 0, state.length );
+                return state;
             }
             break;
         default :

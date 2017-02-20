@@ -1,11 +1,15 @@
 import React from 'react';
 import './NavBar.scss';
 import { Flex } from 'antd-mobile';
+import { connect } from 'react-redux';
+import { popPage } from '../action';
 
-export default class NavBar extends React.Component{
+class NavBar extends React.Component{
     constructor(props) {
         super(props);
+        const { dispatch, pageStack } = props;
         this.goBack = () => {
+            var fallback = dispatch(popPage());
             this.context.router.goBack();
         };
     };
@@ -28,3 +32,5 @@ export default class NavBar extends React.Component{
 NavBar.contextTypes = {
     router:React.PropTypes.object.isRequired
 }
+
+export default connect((state) => {return {pageStack:state}})(NavBar);

@@ -1,0 +1,26 @@
+.input-component{
+    height: 0.9rem;
+    line-height: 0.9rem;
+    background-color:#fff;
+    width:100%;
+    input{
+        border: none;
+        height: 100%;
+        width: 90%;
+        background-color: transparent;
+        font-size: 0.24rem;
+        text-align: right;
+        padding: 0 5%;
+        outline: none;
+        font-family: "微软雅黑";
+    };
+    span{
+        font-size:0.32rem;
+        color:#333;
+    };
+    i.iconfont{
+        font-size:0.32rem;
+        margin:0 0.15rem 0 0.2rem;
+        color:#ff5500;
+    }
+}
