@@ -24,7 +24,14 @@ class Index extends React.Component{
                 pathname:'/maintainset',
             })
         }
-    };
+    }
+    componentDidMount () {
+        window.getComputedStyle;
+        var page = this.refs.pageContent;
+        var windowHeight = document.documentElement.clientHeight;
+        var marginTop = getComputedStyle(page)['margin-top'].split('px')[0] - 0
+        page.style.height = windowHeight - marginTop + 'px';
+    }
     render () {
         return (
             <div className = "page index-page">
@@ -32,74 +39,77 @@ class Index extends React.Component{
                     title="添加保养预约"
                     onRightTouch={this.goMaintainSet}
                     rightContent="保养套餐"
+                    ref = "header"
                 >
                 </NavBar>
-                <div className = "input-control">
-                    <Input 
-                        placeholder = "请输入您的车牌号"
-                        title = "车牌号"
-                        icon = "icon-plate"
-                    ></Input>
-                </div>
-                <div className = "input-control">
-                    <Input 
-                        placeholder = "请选择到店时间"
-                        title = "预约时间"
-                        icon = "icon-time"
-                    ></Input>
-                </div>
-                <div className = "input-control">
-                    <Input 
-                        placeholder = "请选择服务商"
-                        title = "4S店选择"
-                        icon = "icon-store"
-                    ></Input>
-                </div>
-                <div className = "input-control">
-                    <Input 
-                        placeholder = "预约里程"
-                        title = "预约里程"
-                        icon = "icon-mile"
-                        type = "number"
-                    ></Input>
-                    <div className="explain">
-                        客户留言预约描述客户留言预约描述客户留言预约描述客户
-                        留言预约描述客户留言预约描述客户留言预约描述客户留言
-                        预约描述客户留言预约描述客户留言
+                <div className="page-content" ref="pageContent">
+                    <div className = "input-control">
+                        <Input 
+                            placeholder = "请输入您的车牌号"
+                            title = "车牌号"
+                            icon = "icon-plate"
+                        ></Input>
                     </div>
-                </div>
-                <div className = "input-control">
-                    <Input 
-                        placeholder = "联系人"
-                        title = "联系人"
-                        icon = "icon-contact"
-                    ></Input>
-                </div>
-                <div className = "input-control">
-                    <Input 
-                        placeholder = "联系电话"
-                        title = "联系电话"
-                        icon = "icon-phone"
-                        type = "number"
-                    ></Input>
-                </div>
-                <div className = "input-control">
-                    <Input 
-                        placeholder = "预约描述"
-                        title = "预约描述"
-                        icon = "icon-comment"
-                    ></Input>
-                    <div className="explain">
-                        客户留言预约描述客户留言预约描述客户留言预约描述客户
-                        留言预约描述客户留言预约描述客户留言预约描述客户留言
-                        预约描述客户留言预约描述客户留言
+                    <div className = "input-control">
+                        <Input 
+                            placeholder = "请选择到店时间"
+                            title = "预约时间"
+                            icon = "icon-time"
+                        ></Input>
                     </div>
-                </div>
-                <div className = "button-control">
-                    <Button 
-                        text = "确定预约"
-                        click = {this.goToStore}
-                    ></Button>
+                    <div className = "input-control">
+                        <Input 
+                            placeholder = "请选择服务商"
+                            title = "4S店选择"
+                            icon = "icon-store"
+                        ></Input>
+                    </div>
+                    <div className = "input-control">
+                        <Input 
+                            placeholder = "预约里程"
+                            title = "预约里程"
+                            icon = "icon-mile"
+                            type = "number"
+                        ></Input>
+                        <div className="explain">
+                            客户留言预约描述客户留言预约描述客户留言预约描述客户
+                            留言预约描述客户留言预约描述客户留言预约描述客户留言
+                            预约描述客户留言预约描述客户留言
+                        </div>
+                    </div>
+                    <div className = "input-control">
+                        <Input 
+                            placeholder = "联系人"
+                            title = "联系人"
+                            icon = "icon-contact"
+                        ></Input>
+                    </div>
+                    <div className = "input-control">
+                        <Input 
+                            placeholder = "联系电话"
+                            title = "联系电话"
+                            icon = "icon-phone"
+                            type = "number"
+                        ></Input>
+                    </div>
+                    <div className = "input-control">
+                        <Input 
+                            placeholder = "预约描述"
+                            title = "预约描述"
+                            icon = "icon-comment"
+                        ></Input>
+                        <div className="explain">
+                            客户留言预约描述客户留言预约描述客户留言预约描述客户
+                            留言预约描述客户留言预约描述客户留言预约描述客户留言
+                            预约描述客户留言预约描述客户留言
+                        </div>
+                    </div>
+                    <div className = "button-control">
+                        <Button 
+                            text = "确定预约"
+                            click = {this.goToStore}
+                        ></Button>
+                    </div>
                 </div>
             </div>
         )

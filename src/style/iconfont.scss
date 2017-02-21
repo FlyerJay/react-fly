@@ -18,12 +18,10 @@
   font-family: "微软雅黑";
 }
 
-body,html,#app,.transition,.page{
+body,html,#app,.transition,.page,.router-container{
   height:100%;
   width:100%;
-}
-.router-container{
-  width:100%;
+  overflow: hidden
 }
 
 .transition{
@@ -35,8 +33,9 @@ body,html,#app,.transition,.page{
   position: absolute;
 }
 
-.page{
-  margin-top: 1.2rem;
+.page-content{
+  overflow: auto;
+  margin-top: 1rem;
 }
 
 .push-enter {

@@ -1,14 +1,15 @@
 import React from 'react';
-import NavBar from '../components/NavBar';
+import SearchBar from '../components/SearchBar';
+import { ListView } from 'antd-mobile';
 
 export default class Index extends React.Component{
     render () {
         return (
             <div className="page store-page">
-                <NavBar
-                    title="搜索4S店"
+                <SearchBar
+                    explain="搜索4S店"
                 >
-                </NavBar>
+                </SearchBar>
             </div>
         )
     }
