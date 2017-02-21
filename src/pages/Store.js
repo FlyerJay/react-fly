@@ -83,20 +83,13 @@ export default class Index extends React.Component{
         }
     }
     render () {
-        const separator = (sectionID, rowID) => (
-            <div key={`${sectionID}-${rowID}`} style={{
-                height: 8,
-                backgroundColor:'#efefef',
-            }}
-            />
-        );//分割符
         const row = (rowData, sectionID, rowID) => {
             if (index < 0) {
                 index = data.length - 1;
             }
             const obj = data[index--];
             return (
-                <StoreItem {...obj} key={rowID}></StoreItem>
+                <StoreItem {...obj} key={sectionID - rowID} ></StoreItem>
             );
         };//行
         return (
@@ -117,10 +110,9 @@ export default class Index extends React.Component{
                             overflow: 'auto',
                             border: '1px solid #ddd',
                         }}
-                        pageSize={4}
+                        pageSize={20}
                         scrollRenderAheadDistance={500}
                         scrollEventThrottle={20}
-                        onScroll={() => { console.log('scroll'); }}
                         onEndReached={this.onEndReached}
                         onEndReachedThreshold={10}
                     />

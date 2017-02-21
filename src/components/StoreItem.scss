@@ -28,8 +28,21 @@
             .line{
                 margin-left:0rem;
                 color:#4b4b4b;
+                width: 100%;
                 .store-name{
                     font-size:0.3rem;
+                    max-width: 4.5rem;
+                }
+                .store-distance{
+                    font-size: 0.26rem;
+                    color: #a2a2a2;
+                    float:right;
+                    margin-right: 0.1rem;
+                    display: inline-block;
+                    height: 100%;
+                    position: relative;
+                    top: 50%;
+                    margin-top: -0.13rem;
                 }
                 .store-address{
                     white-space: nowrap;
@@ -40,6 +53,7 @@
                 }
                 .store-phone{
                     font-size:0.24rem;
+                    max-width: 4.8rem;
                 }
             }
         }
@@ -48,7 +62,7 @@
 
 @media screen and (max-width: 700px) {
     .store-item .store-info .info-content .line .store-name {
-        max-width: 4rem;
+        max-width: 3.8rem;
     }
     .store-item .store-info .info-content .line .store-address{
         max-width: 4rem;

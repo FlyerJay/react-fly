@@ -1,14 +1,13 @@
 import React from 'react';
-import NavBar from '../components/NavBar';
+import SearchBar from '../components/SearchBar';
 
 export default class MaintainSet extends React.Component{
     render () {
         return (
             <div className="page maintain-set-page">
-                <NavBar
-                    title="保养套餐"
-                >
-                </NavBar>
+                <SearchBar
+                    explain="搜索车型"
+                />
             </div>
         )
     }
