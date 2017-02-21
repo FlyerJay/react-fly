@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
+import { popPage, pushPage } from '../action'
 
 class Roots extends Component{
     constructor (props) {
