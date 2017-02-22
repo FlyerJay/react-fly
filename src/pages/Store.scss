@@ -1,0 +1,15 @@
+.store-page{
+    position: relative;
+    .page-content{
+        .button-control{
+            width: 95%;
+            margin:0.5rem 2.5%;
+            background-color:#fc4c1d;
+            color:#fff;
+            font-size:0.36rem;
+            border-radius: 5px;
+            position: absolute;
+            bottom:0;
+        }
+    }
+}

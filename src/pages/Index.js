@@ -26,7 +26,6 @@ class Index extends React.Component{
         }
     }
     componentDidMount () {
-        window.getComputedStyle;
         var page = this.refs.pageContent;
         var windowHeight = document.documentElement.clientHeight;
         var marginTop = getComputedStyle(page)['margin-top'].split('px')[0] - 0

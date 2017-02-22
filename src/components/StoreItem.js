@@ -8,7 +8,7 @@ class StoreItem extends Component{
     }
     render () {
         return (
-            <Flex className="store-item" wrap="nowrap" justify="center">
+            <Flex className="store-item" wrap="nowrap" justify="center" onClick={this.props.click}>
                 <Flex className="selector" align="center" justify="end">
                     <i className="iconfont icon-select"></i>
                 </Flex>
